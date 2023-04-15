@@ -188,7 +188,167 @@ const actorsData = [
         id:38,
         name:"Neena Gupta",
         image:"https://drive.google.com/uc?id=1zBwI22FQoN92-_bEQ0VdElsuBRrwV29g"
-    }
+    },
+    {
+        id:39,
+        name:"Shameik Moore",
+        image: "https://drive.google.com/uc?id=1PVlZNHruU3Hr1GCfx-9z6JY-Bpy9IaHw"
+    },
+    {
+        id:40,
+        name:"Hailee Steinfield",
+        image: "https://drive.google.com/uc?id=1E2iQpZi6ba2CI6IgSX21U-NF8slRoMQm"
+    },
+    {
+        id:41,
+        name:"Jake Johnson",
+        image: "https://drive.google.com/uc?id=1vlRdyC3VTi8yp8jYPZIOdMGNcPm0sDpO"
+    },
+    {
+        id:42,
+        name:"Prabhas",
+        image: "https://drive.google.com/uc?id=1F0fPqgGDiM6GQqBggpeE-MLDGf_CIDgU"
+    },
+    {
+        id:43,
+        name:"Saif Ali Khan",
+        image: "https://drive.google.com/uc?id=12LVP9K4GCIyfzmiqfNdbmzovlDr7BFxF"
+    },
+    {
+        id:44,
+        name:"Kriti Sanon",
+        image: "https://drive.google.com/uc?id=1TTQC4yCpRycYx3xp-muS-VOe26x27j_c"
+    },
+    {
+        id:45,
+        name:"Ryan Reynolds",
+        image: "https://drive.google.com/uc?id=1l0bCACWeDCkTGmPnjJNHf4y3MesNCA0q"
+    },
+    {
+        id:46,
+        name:"Hugh Jackman",
+        image: "https://drive.google.com/uc?id=1UkB8Lr5grDwK8blNDJviAsZRcQyMwhJY"
+    },
+    {
+        id:47,
+        name:"Vin Diesel",
+        image: "https://drive.google.com/uc?id=1Z561zi0PuzFLevsuS1ZLTL4TtdfrN7eB"
+    },
+    {
+        id:48,
+        name:"Jason Momoa",
+        image: "https://drive.google.com/uc?id=18u3mScOFpMLTbXuo5npkZLF9N0KwVBJe"
+    },
+    {
+        id:49,
+        name:"John Cena",
+        image: "https://drive.google.com/uc?id=1jMR9xyjndzK3fFOXpDSQe8zpZ6Puz2qO"
+    },
+    {
+        id:50,
+        name:"Jason Statham",
+        image: "https://drive.google.com/uc?id=1OdaYTtRuqvLcMovQ0HWV7jd_AI5Ne0gi"
+    },
+    {
+        id:51,
+        name:"Zoe Saldana",
+        image: "https://drive.google.com/uc?id=1yJiJpOHt185nVNx80o69nj8F20ydtBnw"
+    },
+    {
+        id:52,
+        name:"Dave Bautista",
+        image: "https://drive.google.com/uc?id=1koqr2zf0cnHSYwdp3a9UGpj73EFtzdr9"
+    },
+    {
+        id:53,
+        name:"Karen Gillan",
+        image: "https://drive.google.com/uc?id=1c9dAwLZvcCjM18gotn5CVTd25V8H25ZS"
+    },
+    {
+        id:54,
+        name:"Priyamani",
+        image: "https://drive.google.com/uc?id=1_Sq2htQofYfxY4nbc2UkYlPUiNIE7gL6"
+    },
+    {
+        id:55,
+        name:"Gajraj Rao",
+        image: "https://drive.google.com/uc?id=13k7NDQbkpiaEIsD5ZIy-jH6bKSAkIKSi"
+    },
+    {
+        id:56,
+        name:"Brie Larson",
+        image: "https://drive.google.com/uc?id=1UXJ9DjLhxaKb-zWR7RAQRyoaD0n_9oES"
+    },
+    {
+        id:57,
+        name:"Zawe Ashton",
+        image: "https://drive.google.com/uc?id=1oiYx2YQN6g-FusODRaYNJ8a0b2tuW5VV"
+    },
+    {
+        id:58,
+        name:"Teyonah Parris",
+        image: "https://drive.google.com/uc?id=10DLKetzCKunoA37zAXXzbZbn9BHZjycU"
+    },
+    {
+        id:59,
+        name:"Vikram",
+        image: "https://drive.google.com/uc?id=1Fc1dwlLHbkMVbYnsiK2UO7JnTlTFOJ0z"
+    },
+    {
+        id:60,
+        name:"Karthi",
+        image: "https://drive.google.com/uc?id=1yHA4cIbzLOYryKCzBfPsa5wXrEm2NbeO"
+    },
+    {
+        id:61,
+        name:"Aishwarya Rai Bachchan",
+        image: "https://drive.google.com/uc?id=15N_Yvz2fu1VN7ykH_wAIat_EnOvUk0W3"
+    },
+    {
+        id:62,
+        name:"Trisha Krishnan",
+        image: "https://drive.google.com/uc?id=1nQaqQ8Se5e62SDpAzU3qaNlfjy6Fy4JW"
+    },
+    {
+        id:63,
+        name:"Haruka Tomatsu",
+        image: "https://drive.google.com/uc?id=1CcGWLgcYd5xVZJl_p4msjLZ5U-7M5Mnu"
+    },
+    {
+        id:64,
+        name:"Yoshitsugu Matsuoka",
+        image: "https://drive.google.com/uc?id=1L_jt9DS_HCPWPGqNWWlYAdLnXc81yIHy"
+    },
+    {
+        id:65,
+        name:"Inori Minase",
+        image: "https://drive.google.com/uc?id=1wz_2qd04dydM9WJu-4f904FY_ufDE7xP"
+    },
+    {
+        id:66,
+        name:"Shiori Izawa",
+        image: "https://drive.google.com/uc?id=1ba-utOeQR-or9JjlS0EWCbRx9Z24Cr5n"
+    },
+    {
+        id:67,
+        name:"Nanoka Hara",
+        image: "https://drive.google.com/uc?id=1vEqPxO0gNyVRNImxuenVreqZD_klojuX"
+    },
+    {
+        id:68,
+        name:"Hokuto Matsumura",
+        image: "https://drive.google.com/uc?id=1785gRcpVtZdBD98gYEZ6uAKCZsUPzq9u"
+    },
+    {
+        id:69,
+        name:"Eri Fukatsu",
+        image: "https://drive.google.com/uc?id=15OxZXIDDXjIAshndJgRjqpRJOy9wzW3J"
+    },
+    {
+        id:70,
+        name:"Shota Sometani",
+        image: "https://drive.google.com/uc?id=1EOgXHvH-xYsSGeUQMa6pbnDkht5drDca"
+    },
 ];
 
 export default actorsData;

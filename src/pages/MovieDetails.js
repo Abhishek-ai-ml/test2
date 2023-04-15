@@ -38,19 +38,30 @@ const MovieDetails = (props) => {
 
                 <div className='flex flex-col gap-y-4 -ml-20 justify-center'>
                     <h1 className='text-3xl text-blue-900 font-extrabold group-hover:text-4xl transition-all duration-200 ease-in'>{movie.Title}</h1>
-
+                    {movie.ReleaseDate && <div className='flex gap-x-4 items-center justify-start'>
+                        <div className='px-10 py-2 border-red-900 border-4 rounded-lg text-red-900 font-bold group-hover:bg-red-900 group-hover:text-white'>
+                            Releasing on {movie.ReleaseDate}
+                        </div>
+                    </div>}
                     <div className='flex gap-x-4 items-center justify-start'>
                         <div className='px-5 py-2 border-blue-900 border-4 rounded-lg text-blue-900 font-bold group-hover:bg-blue-900 group-hover:text-white'>{dim}</div>
                         <div className='px-5 py-2 border-blue-900 border-4 rounded-lg text-blue-900 font-bold group-hover:bg-blue-900 group-hover:text-white'>{lang}</div>
                     </div>
 
-                    <div className='text-blue-900 text-2xl font-bold'>{time}</div>
+                    {movie.RunTime && <div className='text-blue-900 text-2xl font-bold'>{time}</div>}
 
                     <div className='text-blue-900 text-xl font-bold'>{genre}</div>
 
-                    <div>
-                        <button className='text-xl text-blue-900 border-blue-900 border-4 px-5 py-2 rounded-lg font-bold group-hover:bg-blue-900 group-hover:text-white'>Book Tickets</button>
-                    </div>
+                    {
+                        movie.RunTime && <div>
+                            <button className='text-xl text-red-900 border-red-900 border-4 px-5 py-2 rounded-lg font-bold group-hover:bg-red-900 group-hover:text-white'>Book Tickets</button>
+                        </div>
+                    }
+                    {
+                        movie.ReleaseDate && <div>
+                                <button className='text-xl text-red-900 border-red-900 border-4 px-5 py-2 rounded-lg font-bold group-hover:bg-red-900 group-hover:text-white'>Notify Me!</button>
+                            </div>
+                    }
                 </div>
             </div>
 

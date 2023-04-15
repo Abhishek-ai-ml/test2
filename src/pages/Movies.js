@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 const Movies = (props) => {
     let data = props.data;
+    let data2 = props.data2;
     let actorsData = props.actorsData;
     let setMovie = props.setMovie;
     let setLink = props.setLink;
@@ -51,7 +52,7 @@ const Movies = (props) => {
         </div>
       <div className={`flex w-9/12 pt-10 pl-5 mx-auto flex-wrap gap-y-12  ${seeAllUpcoming ? "h-full" : "h-[510px]"} overflow-hidden `}>
         {
-            data.map( (movie) => <Card movie={movie} actorsData={actorsData}/>)
+            data2.map( (movie) => <Card movie={movie} actorsData={actorsData} setMovie={setMovie} setLink={setLink}/>)
         }
       </div>
     </div>

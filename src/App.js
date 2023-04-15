@@ -27,7 +27,7 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path="/movies" element={<Movies data={data} actorsData={actorsData} setLink={setLink} setMovie={setMovie}/>}/>
+        <Route path="/movies" element={<Movies data={data} data2={data2} actorsData={actorsData} setLink={setLink} setMovie={setMovie}/>}/>
         <Route path="/shows" element={<Shows/>}/>
         <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}/>}/>
         <Route path={`/movies/${link}`} element={<MovieDetails movie={movie} actorsData={actorsData}/>}/> 
