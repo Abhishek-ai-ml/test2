@@ -14,10 +14,12 @@ import MovieDetails from "./pages/MovieDetails";
 function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // const [link, setLink] = useState(null);
+  const [movie, setMovie] = useState(data[0]);
+  const [link, setLink] = useState(data[0].Title.replaceAll(" ", "-").toLowerCase());
 
-  // console.log('Printing link');
-  // console.log(link);
+  console.log('movies data');
+  console.log(movie);
+  console.log(link);
 
   return (
     <div>
@@ -25,10 +27,10 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path="/movies" element={<Movies data={data} upcom={data2} actorsData={actorsData}/>}/>
+        <Route path="/movies" element={<Movies data={data} actorsData={actorsData} setLink={setLink} setMovie={setMovie}/>}/>
         <Route path="/shows" element={<Shows/>}/>
         <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}/>}/>
-        {/* <Route path="/movies/*" element={<MovieDetails/>}/>  */}
+        <Route path={`/movies/${link}`} element={<MovieDetails movie={movie} actorsData={actorsData}/>}/> 
         <Route path='*' element={<Nopage/>}/>
       </Routes>
     </div>

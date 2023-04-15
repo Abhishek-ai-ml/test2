@@ -4,8 +4,11 @@ import { useState } from 'react';
 
 const Movies = (props) => {
     let data = props.data;
-    let upcom = props.upcom;
     let actorsData = props.actorsData;
+    let setMovie = props.setMovie;
+    let setLink = props.setLink;
+
+
     const [seeAll, setSeeAll] = useState(false);
 
     const [seeAllUpcoming, setSeeAllUpcoming] = useState(false);
@@ -17,6 +20,9 @@ const Movies = (props) => {
     function clickHandlerUpcoming() {
         setSeeAllUpcoming(!seeAllUpcoming);
     }
+
+    console.log('print all data');
+    console.log(data);
 
   return (
     <div className='relative top-52 w-full '>
@@ -30,7 +36,7 @@ const Movies = (props) => {
         </div>
       <div className={`flex w-9/12 pt-10 pl-5 mx-auto flex-wrap gap-y-12  ${seeAll ? "h-full" : "h-[510px]"} overflow-hidden `}>
         {
-            data.map( (movie) => <Card movie={movie} actorsData={actorsData}/>)
+            data.map( (movie) => <Card movie={movie} actorsData={actorsData} setMovie={setMovie} setLink={setLink}/>)
         }
       </div>
 
@@ -45,7 +51,7 @@ const Movies = (props) => {
         </div>
       <div className={`flex w-9/12 pt-10 pl-5 mx-auto flex-wrap gap-y-12  ${seeAllUpcoming ? "h-full" : "h-[510px]"} overflow-hidden `}>
         {
-            upcom.map( (movie) => <Card movie={movie} actorsData={actorsData}/>)
+            data.map( (movie) => <Card movie={movie} actorsData={actorsData}/>)
         }
       </div>
     </div>
