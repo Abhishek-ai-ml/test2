@@ -7,6 +7,7 @@ import { useState } from "react";
 import Nopage from "./pages/Nopage";
 import Login from "./pages/Login";
 import data from "./utils/Movies";
+import data2 from "./utils/Upcoming"
 import actorsData from "./utils/Actors";
 import MovieDetails from "./pages/MovieDetails";
 
@@ -24,7 +25,7 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path="/movies" element={<Movies data={data} actorsData={actorsData}/>}/>
+        <Route path="/movies" element={<Movies data={data} upcom={data2} actorsData={actorsData}/>}/>
         <Route path="/shows" element={<Shows/>}/>
         <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}/>}/>
         {/* <Route path="/movies/*" element={<MovieDetails/>}/>  */}

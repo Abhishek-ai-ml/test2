@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 const Movies = (props) => {
     let data = props.data;
+    let upcom = props.upcom;
     let actorsData = props.actorsData;
     const [seeAll, setSeeAll] = useState(false);
 
@@ -44,7 +45,7 @@ const Movies = (props) => {
         </div>
       <div className={`flex w-9/12 pt-10 pl-5 mx-auto flex-wrap gap-y-12  ${seeAllUpcoming ? "h-full" : "h-[510px]"} overflow-hidden `}>
         {
-            data.map( (movie) => <Card movie={movie} actorsData={actorsData}/>)
+            upcom.map( (movie) => <Card movie={movie} actorsData={actorsData}/>)
         }
       </div>
     </div>
