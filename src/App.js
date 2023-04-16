@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
@@ -16,14 +16,18 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [movie, setMovie] = useState(data[0]);
   const [link, setLink] = useState(data[0].Title.replaceAll(" ", "-").toLowerCase());
+  const [searchLink, setSearchLink] = useState();
+
+  // const navigate = useNavigate(`movies/${searchLink}`);
 
   console.log('movies data');
   console.log(movie);
   console.log(link);
+  console.log(searchLink);
 
   return (
     <div>
-      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setSearchLink={setSearchLink}/>
 
       <Routes>
         <Route path='/' element={<Home/>}/>
@@ -31,6 +35,7 @@ function App() {
         <Route path="/shows" element={<Shows/>}/>
         <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}/>}/>
         <Route path={`/movies/${link}`} element={<MovieDetails movie={movie} actorsData={actorsData}/>}/> 
+        <Route path={`movies/${searchLink}`} element={<MovieDetails movie={movie} actorsData={actorsData}/>}/> 
         <Route path='*' element={<Nopage/>}/>
       </Routes>
     </div>
