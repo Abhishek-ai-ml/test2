@@ -5,26 +5,37 @@ import {AiOutlineEye} from 'react-icons/ai';
 import {AiOutlineEyeInvisible} from 'react-icons/ai'
 
 
-const Login = ({setIsLoggedIn}) => {
+const Login = ({setIsLoggedIn, setUsername}) => {
 
   const [loginData, setLoginData] = useState({email:'', password:''});
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
+  function changeHandler(event) {
+    setLoginData( (prev)=> ({...prev, [event.target.name]:event.target.value}));
+  }
+
   function submitHandler(event) {
     event.preventDefault();
     setIsLoggedIn(true);
+    console.log('login Data');
+    console.log(loginData);
     toast.success('Login Successfully');
-    navigate('/');
+    navigate('/dashboard')
   }
 
-  function changeHandler(event) {
-    setLoginData((prev)=> ({...prev, [event.target.name]:event.target.value}));
-  }
+  
 
-  function passwordHandler() {
+  function passwordHandler(event) {
+    event.preventDefault();
     setShowPassword(!showPassword);
   }
+
+  let name = loginData.email.split('@').at(0).toUpperCase();
+
+  setUsername(name);
+
+
   return (
     <div className='relative top-44'>
       {/* {

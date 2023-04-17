@@ -10,13 +10,16 @@ import data from "./utils/Movies";
 import data2 from "./utils/Upcoming"
 import actorsData from "./utils/Actors";
 import MovieDetails from "./pages/MovieDetails";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [movie, setMovie] = useState(data[0]);
+  const [notifyMovie, setNotifyMovie] = useState([]);
   const [link, setLink] = useState(data[0].Title.replaceAll(" ", "-").toLowerCase());
-  const [searchLink, setSearchLink] = useState();
+  const [searchLink, setSearchLink] = useState('');
+  const [username, setUsername] = useState();
 
   // const navigate = useNavigate(`movies/${searchLink}`);
 
@@ -29,13 +32,19 @@ function App() {
     <div>
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setSearchLink={setSearchLink}/>
 
+      {
+        isLoggedIn &&
+        <div className="relative w-9/12 mx-auto text-3xl text-blue-900 left-12 font-extrabold top-40 -z-10"> HI {username}</div>
+      }
+
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path="/movies" element={<Movies data={data} data2={data2} actorsData={actorsData} setLink={setLink} setMovie={setMovie}/>}/>
         <Route path="/shows" element={<Shows/>}/>
-        <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}/>}/>
-        <Route path={`/movies/${link}`} element={<MovieDetails movie={movie} actorsData={actorsData}/>}/> 
-        <Route path={`movies/${searchLink}`} element={<MovieDetails movie={movie} actorsData={actorsData}/>}/> 
+        <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} setUsername={setUsername}/>}/>
+        <Route path={`/movies/${link}`} element={<MovieDetails movie={movie} actorsData={actorsData} isLoggedIn={isLoggedIn} setNotifyMovie={setNotifyMovie}/>}/> 
+        <Route path="/dashboard" element={<Dashboard notifyMovie={notifyMovie}/>}/>
+        {/* <Route path={`movies/${searchLink}`} element={<MovieDetails movie={movie} actorsData={actorsData}/>}/>  */}
         <Route path='*' element={<Nopage/>}/>
       </Routes>
     </div>

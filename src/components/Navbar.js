@@ -10,14 +10,17 @@ const Navbar = (props) => {
 
     const [link, setLink] = useState('');
 
-    function changeHandler(event) {
-       setLink(event.target.value);
-    }
+  
+    const navigate = useNavigate();
 
-    // const navigate = useNavigate(`/movies/${link}`);
+    function changeHandler(event) {
+        setLink(event.target.value);
+    }
+ 
 
     function submitHandler(event) {
         event.preventDefault();
+        navigate(`/movies/${link}`)
         setSearchLink(link);
     }
 

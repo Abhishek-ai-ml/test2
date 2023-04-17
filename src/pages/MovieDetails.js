@@ -1,13 +1,20 @@
 import React from 'react'
+import { NavLink, useNavigate } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
+import { useState } from 'react';
 
 const MovieDetails = (props) => {
     let movie = props.movie;
     let actorsData = props.actorsData;
+    let isLoggedIn = props.isLoggedIn;
+    let setNotifyMovie = props.setNotifyMovie;
     let dim = "";
     let lang = "";
     let time = "";
     let genre = "";
 
+
+    const [notify, setNotify] = useState(true);
 
     movie.Languages.map( (language) => {lang+=language+", "});
     lang=lang.slice(0,-2);
@@ -23,17 +30,35 @@ const MovieDetails = (props) => {
     time+=movie.RunTime%60;
     time+="m";
 
+    const navigate = useNavigate();
+
     const actorsMap ={};
     actorsData.map( actor => {
         actorsMap[actor.id] = actor;
     });
 
+    function notifyHandler() {
+        if(isLoggedIn) {
+            setNotify( (notify) => !notify);
+            setNotifyMovie( (prev) => [...prev, movie]);
+            toast.success('Movie added succesfully to notify list');
+            navigate('/dashboard');
+        }
+
+        else {
+            toast.error('Please login to add movie');
+        }
+    }
+
+    console.log('notify value');
+    console.log(notify);
+
   return (
     <div>
-        <div className='w-9/12 mx-auto relative top-36 mb-[200px]'>
+        <div className='w-9/12 mx-auto relative top-28 mb-[200px]'>
             <div className='flex w-full px-28 py-10 shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px] movie-bg group rounded-3xl transition duration-200 ease-in'>
                 <div className='w-[50%]'>
-                    <img src={movie.Poster} className='w-[50%] h-[300px] rounded-lg group-hover:scale-110 group-hover:translate-x-16 transition duration-200 ease-in'/>
+                    <img src={movie.Poster} loading="lazy" className='w-[50%] h-[300px] rounded-lg group-hover:scale-110 group-hover:translate-x-16 transition duration-200 ease-in'/>
                 </div>
 
                 <div className='flex flex-col gap-y-4 -ml-20 justify-center'>
@@ -59,7 +84,9 @@ const MovieDetails = (props) => {
                     }
                     {
                         movie.ReleaseDate && <div>
-                                <button className='text-xl text-red-900 border-red-900 border-4 px-5 py-2 rounded-lg font-bold group-hover:bg-red-900 group-hover:text-white'>Notify Me!</button>
+                                {
+                                    notify ? <button onClick={notifyHandler} className='text-xl text-red-900 border-red-900 border-4 px-5 py-2 rounded-lg font-bold group-hover:bg-red-900 group-hover:text-white'>Notify Me!</button> : ''
+                                }
                             </div>
                     }
                 </div>
