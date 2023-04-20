@@ -37,10 +37,7 @@ const Login = ({setIsLoggedIn, setUsername}) => {
 
 
   return (
-    <div className='relative top-44'>
-      {/* {
-        setIsLoggedIn(true) 
-      } */}
+    <div className='relative pt-44 bg-slate-300 h-screen'>
 
       <div className='mx-auto w-9/12'>
         <form onSubmit={submitHandler} className='mx-auto py-24 w-[50%] rounded-3xl shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px] flex flex-col gap-y-10 items-center justify-center h-[60vh] login-page'>

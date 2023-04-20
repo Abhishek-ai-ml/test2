@@ -8,8 +8,6 @@ const Movies = (props) => {
     let actorsData = props.actorsData;
     let setMovie = props.setMovie;
     let setLink = props.setLink;
-
-
     const [seeAll, setSeeAll] = useState(false);
 
     const [seeAllUpcoming, setSeeAllUpcoming] = useState(false);

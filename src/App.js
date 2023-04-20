@@ -11,6 +11,9 @@ import data2 from "./utils/Upcoming"
 import actorsData from "./utils/Actors";
 import MovieDetails from "./pages/MovieDetails";
 import Dashboard from "./pages/Dashboard";
+import Signup from "./pages/Signup";
+import BookTicket  from "./pages/BookTicket";
+import SeatSelection from "./pages/SeatSelection";
 
 function App() {
 
@@ -18,8 +21,9 @@ function App() {
   const [movie, setMovie] = useState(data[0]);
   const [notifyMovie, setNotifyMovie] = useState([]);
   const [link, setLink] = useState(data[0].Title.replaceAll(" ", "-").toLowerCase());
-  const [searchLink, setSearchLink] = useState('');
+  const [searchLink, setSearchLink] = useState();
   const [username, setUsername] = useState();
+  const [audi, setAudi] = useState(0);
 
   // const navigate = useNavigate(`movies/${searchLink}`);
 
@@ -42,9 +46,12 @@ function App() {
         <Route path="/movies" element={<Movies data={data} data2={data2} actorsData={actorsData} setLink={setLink} setMovie={setMovie}/>}/>
         <Route path="/shows" element={<Shows/>}/>
         <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} setUsername={setUsername}/>}/>
-        <Route path={`/movies/${link}`} element={<MovieDetails movie={movie} actorsData={actorsData} isLoggedIn={isLoggedIn} setNotifyMovie={setNotifyMovie}/>}/> 
+        <Route path="/signup" element={<Signup setIsLoggedIn={setIsLoggedIn} setUsername={setUsername}/>}/>
+        <Route path={`/movies/${link}`} element={<MovieDetails movie={movie} actorsData={actorsData} isLoggedIn={isLoggedIn} setNotifyMovie={setNotifyMovie} setAudi={setAudi}/>}/> 
         <Route path="/dashboard" element={<Dashboard notifyMovie={notifyMovie}/>}/>
-        {/* <Route path={`movies/${searchLink}`} element={<MovieDetails movie={movie} actorsData={actorsData}/>}/>  */}
+        <Route path='/book-ticket' element={<BookTicket movie={movie} setAudi={setAudi}/>}/>
+        <Route path={searchLink ? `movies/${searchLink}` : '/movies'} element={<MovieDetails movie={movie} actorsData={actorsData}/>}/> 
+        <Route path='/book-ticket/seat-selection' element={<SeatSelection audi={audi}/>}/>
         <Route path='*' element={<Nopage/>}/>
       </Routes>
     </div>

@@ -42,11 +42,21 @@ const MovieDetails = (props) => {
             setNotify( (notify) => !notify);
             setNotifyMovie( (prev) => [...prev, movie]);
             toast.success('Movie added succesfully to notify list');
-            navigate('/dashboard');
+            navigate('/movies');
         }
 
         else {
             toast.error('Please login to add movie');
+        }
+    }
+
+    function bookTicketHandler() {
+        if(isLoggedIn) {
+            navigate('/book-ticket');
+        }
+
+        else {
+            toast.error('Please login to book tickets');
         }
     }
 
@@ -79,7 +89,7 @@ const MovieDetails = (props) => {
 
                     {
                         movie.RunTime && <div>
-                            <button className='text-xl text-red-900 border-red-900 border-4 px-5 py-2 rounded-lg font-bold group-hover:bg-red-900 group-hover:text-white'>Book Tickets</button>
+                            <button onClick={bookTicketHandler} className='text-xl text-red-900 border-red-900 border-4 px-5 py-2 rounded-lg font-bold group-hover:bg-red-900 group-hover:text-white'>Book Tickets</button>
                         </div>
                     }
                     {

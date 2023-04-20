@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
+import {CgProfile} from 'react-icons/cg'
 
 const Navbar = (props) => {
     let isLoggedIn = props.isLoggedIn;
@@ -35,17 +36,18 @@ const Navbar = (props) => {
             <input type='search' placeholder='Search Movies & Shows' onChange={changeHandler} className='px-5 py-2 w-[450px] rounded-3xl'/>
         </form>
 
-        <div className='flex justify-center items-center gap-x-4'>
-            <div>
+        <div className='flex justify-center items-end gap-x-4'>
+            {/* <div>
                 <select className='py-2 rounded-xl px-4 text-white bg-slate-800'>
                     <option>Delhi-NCR</option>
                     <option>Mumbai</option>
                     <option>Banglore</option>
                 </select>
-            </div>
+            </div> */}
 
 
             <div className='text-white'>
+                <div className='flex gap-x-10'>
                 {
                     !isLoggedIn && 
                     <NavLink to='/login'>
@@ -55,6 +57,16 @@ const Navbar = (props) => {
                 }
 
                 {
+                    !isLoggedIn && 
+                    <NavLink to='/signup'>
+                        <button>Sign Up</button>
+                    </NavLink>
+                }
+
+                </div>
+
+                <div className='flex gap-5 items-center'>
+                {
                     isLoggedIn &&
                     <NavLink to='/'>
                         <button onClick={() => {
@@ -63,6 +75,13 @@ const Navbar = (props) => {
                         }}>Log Out</button>
                     </NavLink>
                 }
+
+                {
+                    isLoggedIn && <div>
+                        <NavLink to='/dashboard'><CgProfile fontSize='2rem'/></NavLink>
+                    </div>
+                }
+                </div>
             </div>
         </div>
       </nav>
