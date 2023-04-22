@@ -68,19 +68,19 @@ const MovieDetails = (props) => {
         <div className='w-9/12 mx-auto relative top-28 mb-[200px]'>
             <div className='flex w-full px-28 py-10 shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px] movie-bg group rounded-3xl transition duration-200 ease-in'>
                 <div className='w-[50%]'>
-                    <img src={movie.Poster} loading="lazy" className='w-[50%] h-[300px] rounded-lg group-hover:scale-110 group-hover:translate-x-16 transition duration-200 ease-in'/>
+                    <img src={movie.Poster} loading="lazy" className='w-[50%] h-[300px]  translate-x-16 rounded-lg group-hover:scale-110  transition-all duration-300 ease-in'/>
                 </div>
 
                 <div className='flex flex-col gap-y-4 -ml-20 justify-center'>
-                    <h1 className='text-3xl text-blue-900 font-extrabold group-hover:text-4xl transition-all duration-200 ease-in'>{movie.Title}</h1>
+                    <h1 className=' text-blue-900 font-extrabold text-4xl transition-all duration-200 ease-in'>{movie.Title}</h1>
                     {movie.ReleaseDate && <div className='flex gap-x-4 items-center justify-start'>
                         <div className='px-10 py-2 border-red-900 border-4 rounded-lg text-red-900 font-bold group-hover:bg-red-900 group-hover:text-white'>
                             Releasing on {movie.ReleaseDate}
                         </div>
                     </div>}
                     <div className='flex gap-x-4 items-center justify-start'>
-                        <div className='px-5 py-2 border-blue-900 border-4 rounded-lg text-blue-900 font-bold group-hover:bg-blue-900 group-hover:text-white'>{dim}</div>
-                        <div className='px-5 py-2 border-blue-900 border-4 rounded-lg text-blue-900 font-bold group-hover:bg-blue-900 group-hover:text-white'>{lang}</div>
+                        <div className='px-5 py-2 border-blue-900 border-4 rounded-lg  font-bold bg-blue-900 text-white'>{dim}</div>
+                        <div className='px-5 py-2 border-blue-900 border-4 rounded-lg  font-bold bg-blue-900 text-white'>{lang}</div>
                     </div>
 
                     {movie.RunTime && <div className='text-blue-900 text-2xl font-bold'>{time}</div>}
@@ -89,7 +89,7 @@ const MovieDetails = (props) => {
 
                     {
                         movie.RunTime && <div>
-                            <button onClick={bookTicketHandler} className='text-xl text-red-900 border-red-900 border-4 px-5 py-2 rounded-lg font-bold group-hover:bg-red-900 group-hover:text-white'>Book Tickets</button>
+                            <button onClick={bookTicketHandler} className='text-xl text-red-900 border-red-900 border-4 px-5 py-2  rounded-lg font-bold hover:bg-red-900 hover:text-white transition-all duration-200 ease-in'>Book Tickets</button>
                         </div>
                     }
                     {
